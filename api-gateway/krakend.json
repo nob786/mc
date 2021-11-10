@@ -1,0 +1,259 @@
+{
+  "version": 2,
+  "timeout": "3000ms",
+  "cache_ttl": "300s",
+  "output_encoding": "json",
+  "name": "Gateway",
+  "port": 3001,
+  "extra_config": {
+    "github_com/devopsfaith/krakend-cors": {
+      "allow_origins": ["*"],
+      "allow_headers": ["*"],
+      "expose_headers": ["*"],
+      "max_age": "12h",
+      "allow_methods": ["GET", "HEAD", "POST", "DELETE", "PUT"]
+    }
+  },
+  "endpoints": [
+    {
+      "endpoint": "/auth/signup-customer",
+      "method": "POST",
+      "output_encoding": "json",
+      "extra_config": {},
+      "backend": [
+        {
+          "url_pattern": "/auth/signup-customer",
+          "host": ["http://auth-service:4000"],
+          "method": "POST"
+        }
+      ]
+    },
+    {
+      "endpoint": "/auth/signup-restaurant",
+      "method": "POST",
+      "output_encoding": "json",
+      "extra_config": {},
+      "backend": [
+        {
+          "url_pattern": "/auth/signup-restaurant",
+          "host": ["http://auth-service:4000"],
+          "method": "POST"
+        }
+      ]
+    },
+    {
+      "endpoint": "/auth/login",
+      "method": "POST",
+      "output_encoding": "json",
+      "extra_config": {},
+      "backend": [
+        {
+          "url_pattern": "/auth/login",
+          "host": ["http://auth-service:4000"],
+          "method": "POST"
+        }
+      ]
+    },
+    {
+      "endpoint": "/auth/check",
+      "method": "GET",
+      "output_encoding": "json",
+      "extra_config": {},
+      "backend": [
+        {
+          "url_pattern": "/auth/check",
+          "host": ["http://auth-service:4000"],
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "endpoint": "/item/check",
+      "method": "GET",
+      "output_encoding": "json",
+      "extra_config": {},
+      "backend": [
+        {
+          "url_pattern": "/item/check",
+          "host": ["http://restaurant-service:5000"],
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "endpoint": "/item/add-item",
+      "method": "POST",
+      "output_encoding": "json",
+      "extra_config": {},
+      "headers_to_pass": ["*"],
+      "backend": [
+        {
+          "url_pattern": "/item/add-item",
+          "host": ["http://restaurant-service:5000"],
+          "method": "POST"
+        }
+      ]
+    },
+    {
+      "endpoint": "/item/delete-item/{itemId}",
+      "method": "DELETE",
+      "output_encoding": "json",
+      "extra_config": {},
+      "headers_to_pass": ["*"],
+      "backend": [
+        {
+          "url_pattern": "/item/delete-item/{itemId}",
+          "host": ["http://restaurant-service:5000"],
+          "method": "DELETE"
+        }
+      ]
+    },
+    {
+      "endpoint": "/item/update-item/{itemId}",
+      "method": "PUT",
+      "output_encoding": "json",
+      "extra_config": {},
+      "headers_to_pass": ["*"],
+      "backend": [
+        {
+          "url_pattern": "/item/update-item/{itemId}",
+          "host": ["http://restaurant-service:5000"],
+          "method": "PUT"
+        }
+      ]
+    },
+    {
+      "endpoint": "/item/get-items",
+      "method": "GET",
+      "output_encoding": "json",
+      "extra_config": {},
+      "headers_to_pass": ["*"],
+      "backend": [
+        {
+          "url_pattern": "/item/get-items",
+          "host": ["http://restaurant-service:5000"],
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "endpoint": "/item/get-item/{itemId}",
+      "method": "GET",
+      "output_encoding": "json",
+      "extra_config": {},
+      "headers_to_pass": ["*"],
+      "backend": [
+        {
+          "url_pattern": "/item/get-item/{itemId}",
+          "host": ["http://restaurant-service:5000"],
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "endpoint": "item/get-pending-orders/{restId}",
+      "method": "GET",
+      "output_encoding": "json",
+      "extra_config": {},
+      "backend": [
+        {
+          "url_pattern": "item/get-pending-orders/{restId}",
+          "host": ["http://restaurant-service:5000"],
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "endpoint": "item/update-pending-orders/{restId}",
+      "method": "PUT",
+      "output_encoding": "json",
+      "extra_config": {},
+      "backend": [
+        {
+          "url_pattern": "item/update-pending-orders/{restId}",
+          "host": ["http://restaurant-service:5000"],
+          "method": "PUT"
+        }
+      ]
+    },
+    {
+      "endpoint": "user/check",
+      "method": "GET",
+      "output_encoding": "json",
+      "extra_config": {},
+      "backend": [
+        {
+          "url_pattern": "user/check",
+          "host": ["http://customer-service:7000"],
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "endpoint": "user/get-restaurants",
+      "method": "GET",
+      "output_encoding": "json",
+      "extra_config": {},
+      "backend": [
+        {
+          "url_pattern": "user/get-restaurants",
+          "host": ["http://customer-service:7000"],
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "endpoint": "user/get-restaurant-menu/{restId}",
+      "method": "GET",
+      "output_encoding": "json",
+      "extra_config": {},
+      "backend": [
+        {
+          "url_pattern": "user/get-restaurant-menu/{restId}",
+          "host": ["http://customer-service:7000"],
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "endpoint": "user/get-updated-order/{customerId}",
+      "method": "GET",
+      "output_encoding": "json",
+      "extra_config": {},
+      "backend": [
+        {
+          "url_pattern": "user/get-updated-order/{customerId}",
+          "host": ["http://customer-service:7000"],
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "endpoint": "user/post-order/{restId}",
+      "method": "POST",
+      "output_encoding": "json",
+      "headers_to_pass": ["*"],
+      "extra_config": {},
+      "backend": [
+        {
+          "url_pattern": "user/post-order/{restId}",
+          "host": ["http://customer-service:7000"],
+          "method": "POST"
+        }
+      ]
+    },
+    {
+      "endpoint": "user/post-comment/{restId}",
+      "method": "GET",
+      "output_encoding": "json",
+      "extra_config": {},
+      "backend": [
+        {
+          "url_pattern": "user/post-comment/{restId}",
+          "host": ["http://customer-service:7000"],
+          "method": "GET"
+        }
+      ]
+    }
+  ]
+}

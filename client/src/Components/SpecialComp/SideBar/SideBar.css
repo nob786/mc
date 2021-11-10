@@ -1,0 +1,49 @@
+.sidebar {
+    background-color: #242424;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    border-top: white 1px solid;
+}
+
+.sidebar_menu_container {
+    margin-top: 10px;
+}
+
+.sidebar_menu {
+    display: block;
+    color: white;
+    padding: 16px;
+    text-decoration: none;
+  }
+
+  .sidebar_menu:link{
+      text-decoration: none;
+      color: white;
+  }
+
+  .sidebar_menu:hover{
+      background-color: white;
+    color: black;
+    font-weight: bold;
+}
+
+
+.sidebar_header {
+    position: sticky;
+  z-index: 2000;
+  top: 0;
+    height: 100px;
+    width: 100%;
+    background-color: #242424;
+}
+
+
+
+.icon {
+    color: white;
+    float: right;
+}

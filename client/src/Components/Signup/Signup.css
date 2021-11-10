@@ -1,0 +1,146 @@
+/*=========================================================================Restaurant Signup================================================*/
+
+
+.restaurant_signup_form {
+    text-align: center;
+}
+
+.restaurant-signup-container {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+
+.restaurant-signup-submit-button{
+    margin-top: 10%;
+    margin-bottom: 10%;
+    height: 35px;
+    width: 100px;
+    transition-duration: 0.4s;
+    color: black;
+    border: #242424 1px solid;
+  }
+  
+  .restaurant-signup-submit-button:hover {
+    background-color: #242424; /* Green */
+    color: white;
+    border: black 1px solid;
+  }
+
+
+  .restaurant-signup-submit-button-div {
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*============================================================================Foodie Signup===================================================*/
+
+.foodie_signup_container {
+    display: flex;
+    flex-direction: row;
+    max-width: 1000px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.form-fields {
+    padding-top: 10px;
+}
+
+.image img {
+    width: 500px;
+    height: 700px;
+    
+}
+
+.image {
+    width: 500px;
+    height: 700px;
+}
+
+
+.foodie_signup_form {
+    color: white;
+    text-align: center;
+    background-color: orange;
+    width: 500px;
+    height: 700px;
+}
+
+.title {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+
+.submit {
+    padding-top: 50px;
+    color: black;
+}
+
+
+
+.fields {
+    width: 400px;
+}
+
+.mobilecode {
+    width: 300px;
+}
+
+.mobilecode_field {
+    display: flex;
+    padding-left: 50px;
+}
+
+.mobilecode_button {
+    margin-top: 10px;
+
+}
+
+
+.emailcode {
+    width: 300px;
+}
+
+.emailcode_field {
+    display: flex;
+    padding-left: 50px;
+}
+
+.emailcode_button {
+    margin-top: 10px;
+}
+
+
+
+.already {
+    margin-top: 10px;
+}
+
+
+
+.foodie-signup-submit-button{
+    margin-top: 10%;
+    height: 35px;
+    width: 100px;
+    transition-duration: 0.4s;
+    background-color: orange;
+    color: white;
+    border: black 1px solid;
+  }
+  
+  .foodie-signup-submit-button:hover {
+    background-color: white; /* Green */
+    color: black;
+    border: black 1px solid;
+  }

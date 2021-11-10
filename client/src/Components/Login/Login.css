@@ -1,0 +1,122 @@
+
+
+
+
+
+
+
+
+
+
+
+
+/*===================================================================Foodie Login===============================================================*/
+
+
+.foodie_login_container {
+    max-width: 500px;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 1%;
+}
+
+.form-fields {
+    padding-top: 2px;
+}
+
+
+
+
+
+.foodie_login_form {
+    color: white;
+    text-align: center;
+    background-color: orange;
+    width: 500px;
+    height: 500px;
+}
+
+.title {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+
+.submit {
+    padding-top: 50px;
+    color: black;
+}
+
+
+
+.fields {
+    width: 400x;
+}
+
+.mobilecode {
+    width: 3000px;
+}
+
+.mobilecode_field {
+    padding-left: 500px;
+}
+
+.mobilecode_button1 {
+    margin-top: 10px;
+
+}
+.mobilecode_button2 {
+    margin-top: 10px;
+
+}
+
+
+
+
+
+.already {
+    margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+.login-submit-button{
+    height: 35px;
+    width: 100px;
+    margin-bottom: 10%;
+    transition-duration: 0.4s;
+    background-color: orange;
+    color: white;
+    border: black 1px solid;
+  }
+  
+  .login-submit-button:hover {
+    background-color: white; /* Green */
+    color: black;
+    border: white 1px solid;
+  }
+  
+
+
+
+
+
+  /*========================Media Querries ===================================*/
+  @media (max-width: 480px) {
+    .foodie_login_form {
+        color: white;
+        background-color: orange;
+        width: 400px;
+        height: 380px;
+        margin: auto;
+        padding: 5%;
+    }
+    .email,.fields{
+        width: 100px;
+    }
+  }

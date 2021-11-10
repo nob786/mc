@@ -1,0 +1,56 @@
+/*.TitleTag {
+    line-height: 0.5;
+    text-align: center;
+    margin-bottom: 100px;
+    margin-top: 50px;
+  }
+  .TitleTag h1 {
+    text-align: center;
+    position: relative;
+  }
+  .TitleTag h1:before {
+    content: "";
+    display: block;
+    width: 40%;
+    height: 2px;
+    position: absolute;
+    background: black;
+    left: 0;
+    top: 50%;
+    z-index: -2;
+  }
+  .TitleTag h1:after {
+    content: "";
+    display: block;
+    width: 40%;
+    height: 2px;
+    position: absolute;
+    background: black;
+    right: 0;
+    top: 50%;
+    z-index: -2;
+  }*/
+  .TitleTag span {
+    font-size: 60px;
+    width: 100%;
+    z-index: 2;
+  }
+  
+  .TitleTag button {
+    margin-bottom: 5%;
+    color: black;
+    height: 70px;
+    background-color: white ;
+    width: 100%;
+    font-size: 25px;
+    font-weight: bold;
+    border-color: #242424;
+  }
+  @media (max-width: 480px) {
+    .TitleTag button {
+      height: 50px;
+      width: 300px;
+      font-size: 10px;
+    }
+  }
+  

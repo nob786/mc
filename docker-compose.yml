@@ -1,0 +1,53 @@
+version: "3"
+services:
+  client:
+    build: "./client"
+    ports:
+      - 3000:3000
+
+  api-gateway:
+    build: "./api-gateway"
+    ports:
+      - 3001:3001
+
+  auth-service:
+    build: "./auth-service"
+    ports:
+      - 4000:4000
+    environment:
+      - PORT=4000
+      - DB_USER_NAME=Noor
+      - DB_USER_PASS=pakistan123
+      - DB_NAME=MagicMeal
+
+  restaurant-service:
+    build: "./restaurant-service"
+    ports:
+      - 5000:5000
+    environment:
+      - PORT=5000
+      - DB_USER_NAME=Noor
+      - DB_USER_PASS=pakistan123
+      - DB_NAME=MagicMeal
+
+  customer-service:
+    build: "./customer-service"
+    ports:
+      - 7000:7000
+    environment:
+      - PORT=7000
+      - DB_USER_NAME=Noor
+      - DB_USER_PASS=pakistan123
+      - DB_NAME=MagicMeal
+# volumes:
+#   client:
+#   auth-service:
+#   restaurant-service:
+#   customer-service:
+#   db:
+#     image: mongo:latest
+#     ports:
+#       - 27017:27017
+#     volumes:
+#       - ./MagicMeal:/data/db
+
