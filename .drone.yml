@@ -12,11 +12,11 @@ server:
 
 trigger:
   branch:
-    - master
+    - main
   event:
     - push
     - pull_request
-
+    
 steps:
 - name: [configurations]
   depends_on: [clone]
