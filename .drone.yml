@@ -19,10 +19,9 @@ steps:
     depends_on: [clone]
     commands:
       - sudo docker login --username nob786 --password Ilovepak786
-      - echo "Hello mister"
 
   - name: build-api-gateway
-    depends_on: configurations
+    depends_on: [configurations]
     commands:
       - cd api-gateway
       - sudo docker build -t api-gateway:latest .
@@ -30,43 +29,43 @@ steps:
       - sudo docker push nob786/mc:api-gateway${DRONE_COMMIT:0:7}
       - sudo docker image rm -f nob786/mc:api-gateway${DRONE_COMMIT:0:7}
 
-# steps:
-# - name: build-auth-service
-#   depends_on: [build-api-gateway]
-#   commands:
-#     - cd auth-service
-#     - sudo docker build -t auth-service:latest .
-#     - sudo docker tag auth-service:latest nob786/mc:auth-service${DRONE_COMMIT:0:7}
-#     - sudo docker push nob786/mc:auth-service${DRONE_COMMIT:0:7}
-#     - sudo docker image rm -f nob786/mc:auth-service${DRONE_COMMIT:0:7}
+steps:
+- name: build-auth-service
+  depends_on: [build-api-gateway]
+  commands:
+    - cd auth-service
+    - sudo docker build -t auth-service:latest .
+    - sudo docker tag auth-service:latest nob786/mc:auth-service${DRONE_COMMIT:0:7}
+    - sudo docker push nob786/mc:auth-service${DRONE_COMMIT:0:7}
+    - sudo docker image rm -f nob786/mc:auth-service${DRONE_COMMIT:0:7}
 
-# steps:
-# - name: build-customer-service
-#   depends_on: [build-auth-service]
-#   commands:
-#     - cd customer-service
-#     - sudo docker build -t customer-service:latest .
-#     - sudo docker tag customer-service:latest nob786/mc:customer-service${DRONE_COMMIT:0:7}
-#     - sudo docker push nob786/mc:customer-service${DRONE_COMMIT:0:7}
-#     - sudo docker image rm -f nob786/mc:customer-service${DRONE_COMMIT:0:7}
+steps:
+- name: build-customer-service
+  depends_on: [build-auth-service]
+  commands:
+    - cd customer-service
+    - sudo docker build -t customer-service:latest .
+    - sudo docker tag customer-service:latest nob786/mc:customer-service${DRONE_COMMIT:0:7}
+    - sudo docker push nob786/mc:customer-service${DRONE_COMMIT:0:7}
+    - sudo docker image rm -f nob786/mc:customer-service${DRONE_COMMIT:0:7}
 
 
-# steps:
-# - name: build-restaurant-service
-#   depends_on: [build-customer-service]
-#   commands:
-#     - cd restaurant
-#     - sudo docker build -t restaurant-service:latest .
-#     - sudo docker tag restaurant-service:latest nob786/mc:restaurant-service${DRONE_COMMIT:0:7}
-#     - sudo docker push nob786/mc:restaurant-service${DRONE_COMMIT:0:7}
-#     - sudo docker image rm -f nob786/mc:restaurant-service${DRONE_COMMIT:0:7}
+steps:
+- name: build-restaurant-service
+  depends_on: [build-customer-service]
+  commands:
+    - cd restaurant
+    - sudo docker build -t restaurant-service:latest .
+    - sudo docker tag restaurant-service:latest nob786/mc:restaurant-service${DRONE_COMMIT:0:7}
+    - sudo docker push nob786/mc:restaurant-service${DRONE_COMMIT:0:7}
+    - sudo docker image rm -f nob786/mc:restaurant-service${DRONE_COMMIT:0:7}
 
-# steps:
-# - name: build-client-service
-#   depends_on: [build-restaurant-service]
-#   commands:
-#     - cd client
-#     - sudo docker build -t client-service:latest .
-#     - sudo docker tag client-service:latest nob786/mc:client-service${DRONE_COMMIT:0:7}
-#     - sudo docker push nob786/mc:client-service${DRONE_COMMIT:0:7}
-#     - sudo docker image rm -f nob786/mc:client-service${DRONE_COMMIT:0:7}
+steps:
+- name: build-client-service
+  depends_on: [build-restaurant-service]
+  commands:
+    - cd client
+    - sudo docker build -t client-service:latest .
+    - sudo docker tag client-service:latest nob786/mc:client-service${DRONE_COMMIT:0:7}
+    - sudo docker push nob786/mc:client-service${DRONE_COMMIT:0:7}
+    - sudo docker image rm -f nob786/mc:client-service${DRONE_COMMIT:0:7}
