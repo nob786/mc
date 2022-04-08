@@ -6,13 +6,14 @@ name: build
 server:
   host: ec2-54-196-230-184.compute-1.amazonaws.com
   user: ubuntu
-  password: <Doctypehtml><br><786>
+  password:
+    from_secret: password
 
 trigger:
   branch:
     - master
   event:
-    - pushxxx
+    - push
 
 steps:
   - name: configurations
