@@ -22,6 +22,9 @@ steps:
     depends_on: [clone]
     commands:
       - echo "hello"
+
+node:
+  repo: ssh-runner
 # trigger:
 #   branch:
 #     - main
