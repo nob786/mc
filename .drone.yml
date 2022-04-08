@@ -15,7 +15,7 @@ trigger:
     - push
 
 steps:
-  - name: [configurations]
+  - name: configurations
     depends_on: [clone]
     commands:
       - sudo docker login --username nob786 --password Ilovepak786
