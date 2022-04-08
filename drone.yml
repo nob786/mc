@@ -9,8 +9,8 @@ server:
   password: <Doctypehtml><br><786>
 
 trigger:
-  # branch:
-  #   - master
+  branch:
+    - master
   event:
     - push
     # - pull_request
