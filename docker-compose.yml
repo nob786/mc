@@ -39,15 +39,16 @@ services:
       - DB_USER_NAME=Noor
       - DB_USER_PASS=pakistan123
       - DB_NAME=MagicMeal
-# volumes:
-#   client:
-#   auth-service:
-#   restaurant-service:
-#   customer-service:
-#   db:
-#     image: mongo:latest
-#     ports:
-#       - 27017:27017
-#     volumes:
-#       - ./MagicMeal:/data/db
+volumes:
+  client:
+  auth-service:
+  restaurant-service:
+  customer-service:
+  db:
+    image: mongo:latest
+    ports:
+      - 27017:27017
+    volumes:
+      - ./MagicMeal:/data/db
+
 
