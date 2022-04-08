@@ -21,7 +21,7 @@ steps:
       - sudo docker login --username nob786 --password Ilovepak786
       - echo "Hello mister"
 
-  - name: [build-api-gateway]
+  - name: build-api-gateway
     depends_on: [configurations]
     commands:
       - cd api-gateway
