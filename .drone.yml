@@ -21,6 +21,7 @@ steps:
     depends_on: [clone]
     commands:
       - echo "hello"
+      - sudo docker login --username nob786 --password Ilovepak786
 # steps:
 #   - name: [configurations]
 #     depends_on: [clone]
