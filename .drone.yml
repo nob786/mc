@@ -20,7 +20,6 @@ steps:
     commands:
       - sudo docker login --username nob786 --password Ilovepak786
 
-steps:
   - name: [build-api-gateway]
     depends_on: [configurations]
     commands:
