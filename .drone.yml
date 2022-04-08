@@ -15,7 +15,6 @@ trigger:
     - main
   event:
     - push
-    - pull_request
 
 steps:
   - name: configurations
@@ -23,8 +22,8 @@ steps:
     commands:
       - echo "hello"
 
-node:
-  repo: ssh-runner
+# node:
+#   repo: ssh-runner
 # trigger:
 #   branch:
 #     - main
