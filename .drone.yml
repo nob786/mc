@@ -27,6 +27,7 @@ steps:
       - sudo docker build -t api-gateway:latest .
       - sudo docker tag api-gateway:latest nob786/mc:api-gateway${DRONE_COMMIT:0:7}
       - sudo docker push nob786/mc:api-gateway${DRONE_COMMIT:0:7}
+      - sudo docker image rm -f api-gateway:latest
       - sudo docker image rm -f nob786/mc:api-gateway${DRONE_COMMIT:0:7}
 
   - name: build-auth-service
@@ -36,6 +37,7 @@ steps:
       - sudo docker build -t auth-service:latest .
       - sudo docker tag auth-service:latest nob786/mc:auth-service${DRONE_COMMIT:0:7}
       - sudo docker push nob786/mc:auth-service${DRONE_COMMIT:0:7}
+      - sudo docker image rm -f auth-service:latest
       - sudo docker image rm -f nob786/mc:auth-service${DRONE_COMMIT:0:7}
 
   - name: build-customer-service
@@ -45,6 +47,7 @@ steps:
       - sudo docker build -t customer-service:latest .
       - sudo docker tag customer-service:latest nob786/mc:customer-service${DRONE_COMMIT:0:7}
       - sudo docker push nob786/mc:customer-service${DRONE_COMMIT:0:7}
+      - sudo docker image rm -f customer-service:latest
       - sudo docker image rm -f nob786/mc:customer-service${DRONE_COMMIT:0:7}
 
   - name: build-restaurant-service
@@ -54,6 +57,7 @@ steps:
       - sudo docker build -t restaurant-service:latest .
       - sudo docker tag restaurant-service:latest nob786/mc:restaurant-service${DRONE_COMMIT:0:7}
       - sudo docker push nob786/mc:restaurant-service${DRONE_COMMIT:0:7}
+      - sudo docker image rm -f restaurant-service:latest
       - sudo docker image rm -f nob786/mc:restaurant-service${DRONE_COMMIT:0:7}
 
   # - name: build-client-service
