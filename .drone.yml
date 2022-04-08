@@ -56,11 +56,11 @@ steps:
       - sudo docker push nob786/mc:restaurant-service${DRONE_COMMIT:0:7}
       - sudo docker image rm -f nob786/mc:restaurant-service${DRONE_COMMIT:0:7}
 
-  - name: build-client-service
-    depends_on: [build-restaurant-service]
-    commands:
-      - cd client
-      - sudo docker build -t client-service:latest .
-      - sudo docker tag client-service:latest nob786/mc:client-service${DRONE_COMMIT:0:7}
-      - sudo docker push nob786/mc:client-service${DRONE_COMMIT:0:7}
-      - sudo docker image rm -f nob786/mc:client-service${DRONE_COMMIT:0:7}
+  # - name: build-client-service
+  #   depends_on: [build-restaurant-service]
+  #   commands:
+  #     - cd client
+  #     - sudo docker build -t client-service:latest .
+  #     - sudo docker tag client-service:latest nob786/mc:client-service${DRONE_COMMIT:0:7}
+  #     - sudo docker push nob786/mc:client-service${DRONE_COMMIT:0:7}
+  #     - sudo docker image rm -f nob786/mc:client-service${DRONE_COMMIT:0:7}
