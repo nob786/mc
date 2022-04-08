@@ -21,14 +21,14 @@ steps:
       - sudo docker login --username nob786 --password Ilovepak786
       - echo "Hello mister"
 
-  # - name: [build-api-gateway]
-  #   depends_on: [configurations]
-  #   commands:
-  #     - cd api-gateway
-  #     - sudo docker build -t api-gateway:latest .
-  #     - sudo docker tag api-gateway:latest nob786/mc:api-gateway${DRONE_COMMIT:0:7}
-  #     - sudo docker push nob786/mc:api-gateway${DRONE_COMMIT:0:7}
-  #     - sudo docker image rm -f nob786/mc:api-gateway${DRONE_COMMIT:0:7}
+  - name: [build-api-gateway]
+    depends_on: [configurations]
+    commands:
+      - cd api-gateway
+      - sudo docker build -t api-gateway:latest .
+      - sudo docker tag api-gateway:latest nob786/mc:api-gateway${DRONE_COMMIT:0:7}
+      - sudo docker push nob786/mc:api-gateway${DRONE_COMMIT:0:7}
+      - sudo docker image rm -f nob786/mc:api-gateway${DRONE_COMMIT:0:7}
 
 # steps:
 # - name: build-auth-service
