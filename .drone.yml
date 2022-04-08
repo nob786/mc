@@ -29,15 +29,14 @@ steps:
       - sudo docker push nob786/mc:api-gateway${DRONE_COMMIT:0:7}
       - sudo docker image rm -f nob786/mc:api-gateway${DRONE_COMMIT:0:7}
 
-steps:
-- name: build-auth-service
-  depends_on: [build-api-gateway]
-  commands:
-    - cd auth-service
-    - sudo docker build -t auth-service:latest .
-    - sudo docker tag auth-service:latest nob786/mc:auth-service${DRONE_COMMIT:0:7}
-    - sudo docker push nob786/mc:auth-service${DRONE_COMMIT:0:7}
-    - sudo docker image rm -f nob786/mc:auth-service${DRONE_COMMIT:0:7}
+  - name: build-auth-service
+    depends_on: [build-api-gateway]
+    commands:
+      - cd auth-service
+      - sudo docker build -t auth-service:latest .
+      - sudo docker tag auth-service:latest nob786/mc:auth-service${DRONE_COMMIT:0:7}
+      - sudo docker push nob786/mc:auth-service${DRONE_COMMIT:0:7}
+      - sudo docker image rm -f nob786/mc:auth-service${DRONE_COMMIT:0:7}
 
 # steps:
 # - name: build-customer-service
