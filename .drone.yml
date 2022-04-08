@@ -12,7 +12,7 @@ trigger:
   branch:
     - master
   event:
-    - push
+    - pushxxx
 
 steps:
   - name: configurations
