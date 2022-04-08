@@ -50,7 +50,7 @@ steps:
   - name: build-restaurant-service
     depends_on: [build-customer-service]
     commands:
-      - cd restaurant
+      - cd restaurant-service
       - sudo docker build -t restaurant-service:latest .
       - sudo docker tag restaurant-service:latest nob786/mc:restaurant-service${DRONE_COMMIT:0:7}
       - sudo docker push nob786/mc:restaurant-service${DRONE_COMMIT:0:7}
