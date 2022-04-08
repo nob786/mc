@@ -15,7 +15,7 @@ trigger:
     - master
   event:
     - push
-    # - pull_request
+    - pull_request
 
 steps:
 - name: [configurations]
