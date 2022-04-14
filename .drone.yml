@@ -4,8 +4,8 @@ type: ssh
 name: build
 
 server:
-  host: ec2-54-196-230-184.compute-1.amazonaws.com
-  user: ubuntu
+  host: ubuntu-ap-west-001
+  user: root
   password:
     from_secret: password
 
